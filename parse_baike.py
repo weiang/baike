@@ -46,6 +46,7 @@ def extract_string_from_para(para):
     s = ''.join(list(para.strings)).strip()
     return s
 
+
 def extract_resume(soup):
     resumes = []
     
@@ -76,17 +77,23 @@ def extract_resume(soup):
     return resumes
 
 
+def extract_info(file):
+    with open(file, 'r') as fd:
+        soup = BeautifulSoup(fd, 'html.parser')
+        attrs = extract_basic_info(soup)
+        resumes = extract_resume(soup)
+    return (attrs, resumes)
+
+        
 def main():
     if len(sys.argv) != 2:
         print "Usage: %s <filename>" % (sys.argv[0])
         sys.exit(1)
 
     filename = sys.argv[1]
-    
-    with open(filename, 'r') as fd:
-        soup = BeautifulSoup(fd, "html.parser")
-#        print extract_basic_info(soup)
-        extract_resume(soup)
+    attrs, resumes = extract_info(filename)    
+    print attrs
+    print resumes
 
 
 if __name__ == '__main__':
