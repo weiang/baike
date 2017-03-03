@@ -42,11 +42,21 @@ def extract_basic_info(soup):
 def extract_resume(soup):
     resumes = []
 
-    rs = soup.find_all('div', attrs={'class': 'para', 'label-module': 'para'})
-    for r in rs:
-        print r
-    pass
-    
+    # find first para-title 
+    # first_para = soup.find('div', attrs={'class': 'para-title level-2', 'label-module': 'para-title'})
+    main_content = soup.find('div', attrs={'class': 'main-content'})
+    is_start = False
+    for para in main_content.div.next_siblings:
+        if 'class' not in para.attrs:
+            continue
+        if s['class'] == ['anchor-list']:
+            if is_start:
+                break
+            else:
+                is_start = True
+        if is_start:
+           print s
+
 
 def main():
     if len(sys.argv) != 2:
