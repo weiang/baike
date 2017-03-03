@@ -15,6 +15,7 @@ Date: 2017/03/03 18:35:24
 import sys
 
 from bs4 import BeautifulSoup
+import bs4
 
 def extract_basic_info(soup):
     attrs = {}
@@ -39,23 +40,40 @@ def extract_basic_info(soup):
     
     return r
 
+
+def extract_string_from_para(para):
+#    anchors = para.find_all('a')
+    s = ''.join(list(para.strings)).strip()
+    return s
+
 def extract_resume(soup):
     resumes = []
-
-    # find first para-title 
-    # first_para = soup.find('div', attrs={'class': 'para-title level-2', 'label-module': 'para-title'})
+    
+    # find main content
     main_content = soup.find('div', attrs={'class': 'main-content'})
     is_start = False
     for para in main_content.div.next_siblings:
+        if para is None:
+            continue
+        if isinstance(para, bs4.element.NavigableString):
+            continue
         if 'class' not in para.attrs:
             continue
-        if s['class'] == ['anchor-list']:
+        if para['class'] == ['anchor-list']:
             if is_start:
                 break
             else:
                 is_start = True
         if is_start:
-           print s
+            if 'class' not in para.attrs:
+                continue
+            if 'label-module' not in para.attrs:
+                continue
+            if para['class'] == ['para'] and para['label-module'] == 'para':
+                s = extract_string_from_para(para)
+                resumes.append(s)
+    
+    return resumes
 
 
 def main():
