@@ -1,0 +1,118 @@
+出生日期 1955年7月
+中文名 李克强
+参加工作时间 1974年03月
+学历/学位 在职研究生/经济学博士
+国    籍 中华人民共和国
+毕业院校 北京大学
+主要成就 中国国务院总理
+民    族 汉族
+籍    贯 安徽定远
+####
+post 知青
+end_time 19760000
+start_time 19740000
+location 安徽省凤阳县
+enterprise 大庙公社东陵大队
+####
+post 书记
+end_time 19780000
+start_time 19760000
+location 安徽省凤阳县
+enterprise 大庙公社大庙大队党支部
+####
+post 负责人
+end_time 19820000
+start_time 19780000
+location 
+enterprise 北京大学法律系#学生会
+####
+post 书记#常委
+end_time 19830000
+start_time 19820000
+location 
+enterprise 北京大学团委共青团中央
+####
+post 部长#秘书长
+end_time 19830000
+start_time 19830000
+location 
+enterprise 共青团中央学校部#全国学联
+####
+post 书记
+end_time 19850000
+start_time 19830000
+location 
+enterprise 共青团中央书记处
+####
+post 书记#副主席#干部
+end_time 
+start_time 
+location 
+enterprise 共青团中央书记处#全国青联中央党校进修班
+####
+post 第一书记#院长
+end_time 19980000
+start_time 19930000
+location 
+enterprise 共青团中央书记处#中国青年政治学院
+####
+post 研究生#硕士
+end_time 19940000
+start_time 19880000
+location 
+enterprise 北京大学经济学院#博士学位
+####
+post 副书记#代省长#总指挥
+end_time 19990000
+start_time 19980000
+location 黄河
+enterprise 河南省委#总指挥部
+####
+post 副书记#省长#总指挥
+end_time 20020000
+start_time 19990000
+location 黄河
+enterprise 河南省委#总指挥部
+####
+post 书记#省长#总指挥
+end_time 20030000
+start_time 20020000
+location 黄河
+enterprise 河南省委#总指挥部
+####
+post 书记#主任
+end_time 20040000
+start_time 20030000
+location 
+enterprise 河南省委#人大常委会
+####
+post 书记
+end_time 20050000
+start_time 20040000
+location 
+enterprise 辽宁省委
+####
+post 书记#主任
+end_time 20070000
+start_time 20050000
+location 
+enterprise 辽宁省委#人大常委会
+####
+post 
+end_time 20080000
+start_time 20070000
+location 
+enterprise 中央政治局常委
+####
+post 副总理#副书记#主任#主任#组长
+end_time 20130000
+start_time 20080000
+location 
+enterprise 中央政治局常委国务院党组国务院三峡工程建设委员会国务院南水北调工程建设委员会国务院#医药卫生#领导小组
+####
+post 总理#主任#主任#组长
+end_time 20000000
+start_time 20130000
+location 
+enterprise 中央政治局常委国务院#国务院三峡工程建设委员会国务院南水北调工程建设委员会国务院#医药卫生#领导小组
+{"\u51fa\u751f\u65e5\u671f": "1955\u5e747\u6708", "resume": [{"post": "\u77e5\u9752", "end_time": "19760000", "start_time": "19740000", "location": "\u5b89\u5fbd\u7701\u51e4\u9633\u53bf", "enterprise": "\u5927\u5e99\u516c\u793e\u4e1c\u9675\u5927\u961f"}, {"post": "\u4e66\u8bb0", "end_time": "19780000", "start_time": "19760000", "location": "\u5b89\u5fbd\u7701\u51e4\u9633\u53bf", "enterprise": "\u5927\u5e99\u516c\u793e\u5927\u5e99\u5927\u961f\u515a\u652f\u90e8"}, {"post": "\u8d1f\u8d23\u4eba", "end_time": "19820000", "start_time": "19780000", "location": "", "enterprise": "\u5317\u4eac\u5927\u5b66\u6cd5\u5f8b\u7cfb#\u5b66\u751f\u4f1a"}, {"post": "\u4e66\u8bb0#\u5e38\u59d4", "end_time": "19830000", "start_time": "19820000", "location": "", "enterprise": "\u5317\u4eac\u5927\u5b66\u56e2\u59d4\u5171\u9752\u56e2\u4e2d\u592e"}, {"post": "\u90e8\u957f#\u79d8\u4e66\u957f", "end_time": "19830000", "start_time": "19830000", "location": "", "enterprise": "\u5171\u9752\u56e2\u4e2d\u592e\u5b66\u6821\u90e8#\u5168\u56fd\u5b66\u8054"}, {"post": "\u4e66\u8bb0", "end_time": "19850000", "start_time": "19830000", "location": "", "enterprise": "\u5171\u9752\u56e2\u4e2d\u592e\u4e66\u8bb0\u5904"}, {"post": "\u4e66\u8bb0#\u526f\u4e3b\u5e2d#\u5e72\u90e8", "end_time": "", "start_time": "", "location": "", "enterprise": "\u5171\u9752\u56e2\u4e2d\u592e\u4e66\u8bb0\u5904#\u5168\u56fd\u9752\u8054\u4e2d\u592e\u515a\u6821\u8fdb\u4fee\u73ed"}, {"post": "\u7b2c\u4e00\u4e66\u8bb0#\u9662\u957f", "end_time": "19980000", "start_time": "19930000", "location": "", "enterprise": "\u5171\u9752\u56e2\u4e2d\u592e\u4e66\u8bb0\u5904#\u4e2d\u56fd\u9752\u5e74\u653f\u6cbb\u5b66\u9662"}, {"post": "\u7814\u7a76\u751f#\u7855\u58eb", "end_time": "19940000", "start_time": "19880000", "location": "", "enterprise": "\u5317\u4eac\u5927\u5b66\u7ecf\u6d4e\u5b66\u9662#\u535a\u58eb\u5b66\u4f4d"}, {"post": "\u526f\u4e66\u8bb0#\u4ee3\u7701\u957f#\u603b\u6307\u6325", "end_time": "19990000", "start_time": "19980000", "location": "\u9ec4\u6cb3", "enterprise": "\u6cb3\u5357\u7701\u59d4#\u603b\u6307\u6325\u90e8"}, {"post": "\u526f\u4e66\u8bb0#\u7701\u957f#\u603b\u6307\u6325", "end_time": "20020000", "start_time": "19990000", "location": "\u9ec4\u6cb3", "enterprise": "\u6cb3\u5357\u7701\u59d4#\u603b\u6307\u6325\u90e8"}, {"post": "\u4e66\u8bb0#\u7701\u957f#\u603b\u6307\u6325", "end_time": "20030000", "start_time": "20020000", "location": "\u9ec4\u6cb3", "enterprise": "\u6cb3\u5357\u7701\u59d4#\u603b\u6307\u6325\u90e8"}, {"post": "\u4e66\u8bb0#\u4e3b\u4efb", "end_time": "20040000", "start_time": "20030000", "location": "", "enterprise": "\u6cb3\u5357\u7701\u59d4#\u4eba\u5927\u5e38\u59d4\u4f1a"}, {"post": "\u4e66\u8bb0", "end_time": "20050000", "start_time": "20040000", "location": "", "enterprise": "\u8fbd\u5b81\u7701\u59d4"}, {"post": "\u4e66\u8bb0#\u4e3b\u4efb", "end_time": "20070000", "start_time": "20050000", "location": "", "enterprise": "\u8fbd\u5b81\u7701\u59d4#\u4eba\u5927\u5e38\u59d4\u4f1a"}, {"post": "", "end_time": "20080000", "start_time": "20070000", "location": "", "enterprise": "\u4e2d\u592e\u653f\u6cbb\u5c40\u5e38\u59d4"}, {"post": "\u526f\u603b\u7406#\u526f\u4e66\u8bb0#\u4e3b\u4efb#\u4e3b\u4efb#\u7ec4\u957f", "end_time": "20130000", "start_time": "20080000", "location": "", "enterprise": "\u4e2d\u592e\u653f\u6cbb\u5c40\u5e38\u59d4\u56fd\u52a1\u9662\u515a\u7ec4\u56fd\u52a1\u9662\u4e09\u5ce1\u5de5\u7a0b\u5efa\u8bbe\u59d4\u5458\u4f1a\u56fd\u52a1\u9662\u5357\u6c34\u5317\u8c03\u5de5\u7a0b\u5efa\u8bbe\u59d4\u5458\u4f1a\u56fd\u52a1\u9662#\u533b\u836f\u536b\u751f#\u9886\u5bfc\u5c0f\u7ec4"}, {"post": "\u603b\u7406#\u4e3b\u4efb#\u4e3b\u4efb#\u7ec4\u957f", "end_time": "20000000", "start_time": "20130000", "location": "", "enterprise": "\u4e2d\u592e\u653f\u6cbb\u5c40\u5e38\u59d4\u56fd\u52a1\u9662#\u56fd\u52a1\u9662\u4e09\u5ce1\u5de5\u7a0b\u5efa\u8bbe\u59d4\u5458\u4f1a\u56fd\u52a1\u9662\u5357\u6c34\u5317\u8c03\u5de5\u7a0b\u5efa\u8bbe\u59d4\u5458\u4f1a\u56fd\u52a1\u9662#\u533b\u836f\u536b\u751f#\u9886\u5bfc\u5c0f\u7ec4"}], "\u4e2d\u6587\u540d": "\u674e\u514b\u5f3a", "\u53c2\u52a0\u5de5\u4f5c\u65f6\u95f4": "1974\u5e7403\u6708", "\u5b66\u5386/\u5b66\u4f4d": "\u5728\u804c\u7814\u7a76\u751f/\u7ecf\u6d4e\u5b66\u535a\u58eb", "\u56fd\u00a0\u00a0\u00a0\u00a0\u7c4d": "\u4e2d\u534e\u4eba\u6c11\u5171\u548c\u56fd", "\u6bd5\u4e1a\u9662\u6821": "\u5317\u4eac\u5927\u5b66", "\u4e3b\u8981\u6210\u5c31": "\u4e2d\u56fd\u56fd\u52a1\u9662\u603b\u7406", "\u6c11\u00a0\u00a0\u00a0\u00a0\u65cf": "\u6c49\u65cf", "\u7c4d\u00a0\u00a0\u00a0\u00a0\u8d2f": "\u5b89\u5fbd\u5b9a\u8fdc"}
