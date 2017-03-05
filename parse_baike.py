@@ -30,13 +30,13 @@ def extract_basic_info(soup):
 
     r = {}
     for (key, value) in zip(bins, bivs):
-        k = key.string.strip(": \t\n")
+        k = key.string.strip(": \t\n").encode('utf-8')
         v = value.string
         if v is None:
             x = value.find('a')
             v = x.string
         v = v.strip(": \t\n") 
-        r[k] = v
+        r[k] = v.encode('utf-8')
     
     return r
 

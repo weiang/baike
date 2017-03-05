@@ -6,77 +6,9 @@ import json
 import pdb 
 import re
 
-from nltk.tag import StanfordNERTagger
-import jieba
-
 from parse_baike import *
-
-chinese_ner = StanfordNERTagger('chinese.misc.distsim.crf.ser.gz')
-
-
-entity_class = {
-        "PERSON": 0,
-        "GPE": 1,
-        "MISC": 2,
-        "ORGANIZATION": 3,
-        "O": 4
-}
-
-time_patterns = [
-        u"\d+年(\d+月)?(\d+日)?",
-        u"[0-9]{1,4}(\.[0-9]{1,2})?(\.[0-9]{1,2})?"
-]
-
-
-def normalize_time(ds):
-    # print ds
-    chars = [u"年", u"月", u"日", u"."]
-    r = ds
-    for c in chars:
-        r = r.replace(c, u"")
-
-    # pad zeros
-    zeros = (8 - len(r)) * '0'
-    return r + zeros
-
-
-def extract_time(s):
-    # print s
-    for p in time_patterns:
-        r = [] 
-        rs = re.finditer(p, s)
-        for d in rs:
-            ds = normalize_time(d.group())
-            r.append(ds)
-        if len(r) == 2:
-            return r
-
-    return None
-
-
-def extract_entity(s):
-    tokens = list(jieba.cut(s))
-    r = chinese_ner.tag(tokens) 
-    
-    entity_dict = {}
-    pre_cls = ""
-    terms = []
-    for token, cls in r:
-        # print type(token)
-        print "%s, %s" % (token, cls)
-        if cls != pre_cls:
-            if pre_cls != "":
-                entity_dict.setdefault(pre_cls, [])
-                entity_dict[pre_cls].append(terms)
-                terms = []
-        terms.append(token)
-        pre_cls = cls
-            
-
-    entity_dict.setdefault(cls, [])
-    entity_dict[cls].append(terms)
-
-    return entity_dict
+#from extract_entity_with_nltk import *
+from extract_entity_with_hanlp import *
 
 
 class BaikeException(Exception):
@@ -99,6 +31,22 @@ class Baike(object):
 
 Resume = namedtuple("Resume", ['post', 'enterprise', 'location', 'start_time', 'end_time'])
 
+def is_empty_resume(resume):
+    r = True
+    for k,v in resume.__dict__.items():
+        if v != "":
+            r = False
+            break
+    return r
+
+
+def resume2dict(resume):
+    r = {}
+    for k, v in resume.__dict__.items():
+        r[k] = v
+    return r
+
+
 class BaikePerson(Baike):
     def __init__(self, doc):
         self._doc = doc
@@ -106,61 +54,44 @@ class BaikePerson(Baike):
 
     def _structure(self):
         self._basic_info, resumes = extract_info(self._doc)
-        print self._basic_info
-        print resumes
+        #print self._basic_info
+        #print resumes
         self._resumes = self._extract_resume_multi(resumes)
-        print self._resumes
+        #print self._resumes
     
     def _extract_resume_single(self, sentence):
-        post = ""
-        enterprise = ""
-        location = ""
-        start_time = ""
-        end_time = ""
-        
-        entity_dict = extract_entity(sentence)
-
-        # start_time, end_time
-        if 'MISC' in entity_dict:
-            for terms in entity_dict['MISC']:
-                r = extract_time(''.join(terms))
-                if r is not None:
-                    start_time = r[0]
-                    end_time = r[1]
-                    break
-        
-        # location
-        if 'GPE' in entity_dict:
-            s = ""
-            for terms in entity_dict['GPE']:
-                new_s = "".join(terms)
-                if len(new_s) > len(s):
-                    s = new_s
-            location = s
-        
-        # enterprise
-        if 'ORGANIZATION' in entity_dict:
-            s = ""
-            for terms in entity_dict['ORGANIZATION']:
-                new_s = "".join(terms)
-                if len(new_s) > len(s):
-                    s = new_s
-            enterprise = s
-        
-        return Resume(post, enterprise, location, start_time, end_time)
+        entities = extract_resume_entity(sentence) 
+        return Resume(*entities)
 
     def _extract_resume_multi(self, rs):
         results = []
         for r in rs:
             resume = self._extract_resume_single(r)
-            print r.encode('utf-8')
-            print "Resume:"
-            keys = resume.__dict__.keys() 
-            for k in keys:
-                print "%s=%s, " % (k, getattr(resume, k).encode('utf-8'))
-            print 
-            results.append(resume)
+            #print r.encode('utf-8')
+            #print "Resume:"
+            #keys = resume.__dict__.keys() 
+            #for k in keys:
+            #    print "%s=%s, " % (k, getattr(resume, k).encode('utf-8'))
+            #print 
+            if not is_empty_resume(resume):
+                results.append(resume)
+            else:
+#                print "empty resume"
+                pass
         return results
     
     def to_json(self):
-        pass
+        d = self._basic_info.copy() 
+#        for k, v in d.items():
+#            print k, v
+
+        resumes = [] 
+        for r in self._resumes:
+            new_r = resume2dict(r)
+            resumes.append(new_r)
+        d['resume'] = resumes
+#        for r in resumes:
+#            for k,v in r.items():
+#                print k,v
+#            print "####"
+        return json.dumps(d)
